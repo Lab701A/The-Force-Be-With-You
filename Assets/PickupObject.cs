@@ -7,10 +7,14 @@ public class PickupObject : MonoBehaviour {
 	GameObject carriedObject;
 	public float distance;
 	public float smooth;
-
+	// Mindwave
+	mind mindObject;
+	int blink = 0;
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag ("MainCamera");
+		mindObject = GameObject.Find ("Mind").GetComponent<mind> ();
+		blink = mindObject.Blink;
 	}
 	
 	// Update is called once per frame
@@ -30,8 +34,9 @@ public class PickupObject : MonoBehaviour {
 	}
 
 	void checkDrop() {
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
 			dropObject ();
+			blink = mindObject.Blink;
 		}
 	}
 
@@ -42,7 +47,7 @@ public class PickupObject : MonoBehaviour {
 	}
 
 	void pickup() {
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
 			int x = Screen.width / 2;
 			int y = Screen.height / 2;
 
@@ -56,6 +61,7 @@ public class PickupObject : MonoBehaviour {
 					p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 				}
 			}
+			blink = mindObject.Blink;
 		}
 	}
 }
