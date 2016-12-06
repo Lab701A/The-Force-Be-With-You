@@ -9,7 +9,8 @@ public class PickupObject : MonoBehaviour {
 	public float smooth;
 	// Mindwave
 	mind mindObject;
-	int blink = 0;
+	int blink;
+		
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag ("MainCamera");
@@ -47,7 +48,7 @@ public class PickupObject : MonoBehaviour {
 	}
 
 	void pickup() {
-		if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
+		//if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
 			int x = Screen.width / 2;
 			int y = Screen.height / 2;
 
@@ -56,12 +57,15 @@ public class PickupObject : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null) {
-					carrying = true;
-					carriedObject = p.gameObject;
-					p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+					if (p.blink != blink) {
+						carrying = true;
+						carriedObject = p.gameObject;
+						p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+					}
+					blink = p.blink;
 				}
 			}
 			blink = mindObject.Blink;
-		}
+		//}
 	}
 }

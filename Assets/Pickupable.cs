@@ -7,12 +7,15 @@ public class Pickupable : MonoBehaviour, IGvrGazeResponder {
 	public int blink = 0;
 	public bool isLookingAt = false;
 	public bool isOpen = false;
+	//
+	GameObject FPS;
 
 	// Use this for initialization
 	void Start () {
 		// Mindwave
 		mindObject = GameObject.Find ("Mind").GetComponent<mind> ();
 		blink = mindObject.Blink;
+		FPS = GameObject.Find ("FPSController");
 	}
 	
 	// Update is called once per frame
@@ -27,13 +30,15 @@ public class Pickupable : MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void setGazeAt(bool lookingAt){
-		isLookingAt = lookingAt;
+			isLookingAt = lookingAt;
 	}
 
 
 	public void OnGazeEnter(){
-		setGazeAt (true);
-		blink = mindObject.Blink;
+		if (Vector3.Distance (this.transform.position, FPS.transform.position) > FPS.GetComponent<PickupObject> ().distance) {
+			setGazeAt (true);
+			blink = mindObject.Blink;
+		}
 	}
 
 	public void OnGazeExit(){
