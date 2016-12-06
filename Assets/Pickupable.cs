@@ -4,7 +4,7 @@ using System.Collections;
 public class Pickupable : MonoBehaviour, IGvrGazeResponder {
 	// GvrGaze & Mindwave
 	mind mindObject;
-	int blink = 0;
+	public int blink = 0;
 	public bool isLookingAt = false;
 	public bool isOpen = false;
 
