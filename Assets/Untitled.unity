@@ -2532,8 +2532,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c75619bce5d94b7d9f4fa0bce1fafa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carrying: 0
   distance: 5
   smooth: 5
+  rotateSpeed: 0
 --- !u!1 &127296118
 GameObject:
   m_ObjectHideFlags: 0
@@ -21629,6 +21631,7 @@ GameObject:
   - 23: {fileID: 1396607895}
   - 54: {fileID: 1396607894}
   - 114: {fileID: 1396607893}
+  - 114: {fileID: 1396607899}
   m_Layer: 0
   m_Name: Cube1
   m_TagString: Untagged
@@ -21649,7 +21652,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blink: 0
   isLookingAt: 0
-  isOpen: 0
 --- !u!54 &1396607894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21726,6 +21728,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &1396607899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396607892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1 &1396926258
 GameObject:
   m_ObjectHideFlags: 0
@@ -29979,6 +29994,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985242739}
   m_Mesh: {fileID: 4300060, guid: 15b8803abc27a4a06b9f89b1233b1925, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1986068472
 GameObject:
   m_ObjectHideFlags: 0
@@ -30050,6 +30066,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
+=======
+>>>>>>> feature/PickAndDropAndRotate
 --- !u!1 &1991409825
 GameObject:
   m_ObjectHideFlags: 0

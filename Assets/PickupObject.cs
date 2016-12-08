@@ -3,28 +3,25 @@ using System.Collections;
 
 public class PickupObject : MonoBehaviour {
 	GameObject mainCamera;
-	bool carrying;
+	public bool carrying;
 	GameObject carriedObject;
 	public float distance;
 	public float smooth;
+	public int rotateSpeed;
 	// Mindwave
 	mind mindObject;
-	int blink;
-		
+
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag ("MainCamera");
 		mindObject = GameObject.Find ("Mind").GetComponent<mind> ();
-		blink = mindObject.Blink;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (carrying) {
 			carry (carriedObject);
-			checkDrop ();
-		} else {
-			pickup ();
+			rotate (carriedObject);
 		}
 	}
 
@@ -34,38 +31,25 @@ public class PickupObject : MonoBehaviour {
 		o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
 	}
 
-	void checkDrop() {
-		if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
-			dropObject ();
-			blink = mindObject.Blink;
-		}
-	}
-
-	void dropObject() {
+	public void dropObject() {
 		carrying = false;
 		carriedObject.GetComponent<Rigidbody>().isKinematic = false;
 		carriedObject = null;
 	}
 
-	void pickup() {
-		//if (Input.GetKeyDown (KeyCode.E) || mindObject.Blink != blink) {
-			int x = Screen.width / 2;
-			int y = Screen.height / 2;
+	public void pickup(GameObject o) {
+		carrying = true;
+		carriedObject = o;
+		o.GetComponent<Rigidbody>().isKinematic = true;
+	}
 
-			Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay (new Vector3 (x, y));
-			RaycastHit hit;
-			if(Physics.Raycast(ray, out hit)) {
-				Pickupable p = hit.collider.GetComponent<Pickupable>();
-				if(p != null) {
-					if (p.blink != blink) {
-						carrying = true;
-						carriedObject = p.gameObject;
-						p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-					}
-					blink = p.blink;
-				}
-			}
-			blink = mindObject.Blink;
-		//}
+	public void rotate(GameObject o) {
+		if (mindObject.poorSignal == 0 && mindObject.medit > 50) {
+			// Rotate
+			rotateSpeed = mindObject.medit;
+			o.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed, Space.World);
+		} else {
+			// Stop
+		}
 	}
 }
