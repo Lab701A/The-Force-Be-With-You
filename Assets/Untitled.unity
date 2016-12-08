@@ -8235,6 +8235,18 @@ Prefab:
       propertyPath: m_Name
       value: chair_1_model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300004, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300002, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
   m_IsPrefabParent: 0
@@ -17014,6 +17026,18 @@ Prefab:
       propertyPath: m_Name
       value: chair_1_model (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300004, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300002, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
   m_IsPrefabParent: 0
@@ -18601,6 +18625,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cf4f88a5b0262594ca12aa1b0d1caf9e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a417b0f11477a415093dd5b8058f6f2f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf4f88a5b0262594ca12aa1b0d1caf9e, type: 3}
   m_IsPrefabParent: 0
@@ -25102,6 +25130,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -89.475006
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300004, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300002, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
   m_IsPrefabParent: 0
@@ -28139,6 +28179,18 @@ Prefab:
       propertyPath: m_Name
       value: chair_1_model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300004, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
+    - target: {fileID: 2300000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfae692c020884ef18e8ad6f9f8ed706, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f57dd114f0ee4e74e9874630ac623755, type: 3}
   m_IsPrefabParent: 0
