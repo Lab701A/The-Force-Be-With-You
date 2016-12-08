@@ -6,8 +6,9 @@ public class PickupObject : MonoBehaviour {
 	public bool carrying;
 	GameObject carriedObject;
 	public float distance;
-	public float smooth;
+	public float smooth = 100;
 	public int rotateSpeed;
+	Vector3 nextPos;
 	// Mindwave
 	mind mindObject;
 
@@ -28,7 +29,9 @@ public class PickupObject : MonoBehaviour {
 	void carry(GameObject o) {
 		// Use Vector3.Lerp to move smoothly
 		//o.transform.position = mainCamera.transform.position + mainCamera.transform.forward * distance;
-		o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
+		nextPos = mainCamera.transform.position + mainCamera.transform.forward * distance;
+		o.GetComponent<Rigidbody> ().velocity = (nextPos - o.transform.position) * Time.deltaTime * smooth;
+		//o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
 	}
 
 	public void dropObject() {
@@ -40,7 +43,7 @@ public class PickupObject : MonoBehaviour {
 	public void pickup(GameObject o) {
 		carrying = true;
 		carriedObject = o;
-		o.GetComponent<Rigidbody>().isKinematic = true;
+		//o.GetComponent<Rigidbody>().isKinematic = true;
 	}
 
 	public void rotate(GameObject o) {
