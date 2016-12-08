@@ -29994,7 +29994,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985242739}
   m_Mesh: {fileID: 4300060, guid: 15b8803abc27a4a06b9f89b1233b1925, type: 3}
-<<<<<<< HEAD
 --- !u!1 &1986068472
 GameObject:
   m_ObjectHideFlags: 0
@@ -30066,8 +30065,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
-=======
->>>>>>> feature/PickAndDropAndRotate
 --- !u!1 &1991409825
 GameObject:
   m_ObjectHideFlags: 0
