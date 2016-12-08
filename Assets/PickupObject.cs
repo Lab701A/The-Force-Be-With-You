@@ -7,6 +7,7 @@ public class PickupObject : MonoBehaviour {
 	GameObject carriedObject;
 	public float distance;
 	public float smooth;
+	public int rotateSpeed;
 	// Mindwave
 	mind mindObject;
 
@@ -20,6 +21,7 @@ public class PickupObject : MonoBehaviour {
 	void Update () {
 		if (carrying) {
 			carry (carriedObject);
+			rotate (carriedObject);
 		}
 	}
 
@@ -39,5 +41,15 @@ public class PickupObject : MonoBehaviour {
 		carrying = true;
 		carriedObject = o;
 		o.GetComponent<Rigidbody>().isKinematic = true;
+	}
+
+	public void rotate(GameObject o) {
+		if (mindObject.poorSignal == 0 && mindObject.medit > 50) {
+			// Rotate
+			rotateSpeed = mindObject.medit;
+			o.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed, Space.World);
+		} else {
+			// Stop
+		}
 	}
 }
